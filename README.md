@@ -1,4 +1,4 @@
-# Laravel 6 功能開關
+# Laravel 7 功能開關
 
 引入 ylsideas 的 feature-flags 套件來擴增允許控制線上功能開啟或者關閉的方式，通常會採取配置文件的方式來控制，也可以改採取資料庫或 Redis 來控制。
 
