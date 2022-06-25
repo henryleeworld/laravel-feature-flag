@@ -1,4 +1,4 @@
-# Laravel 8 功能開關
+# Laravel 9 功能開關
 
 引入 ylsideas 的 feature-flags 套件來擴增允許控制線上功能開啟或者關閉的方式，通常會採取配置文件的方式來控制，也可以改採取資料庫或 Redis 來控制。
 
@@ -12,13 +12,17 @@ $ git clone
 ```sh
 $ composer install
 ```
-- 產⽣ Laravel 要使用的一組 32 字元長度的隨機字串 APP_KEY 並存在 .env 內。
+- 產生 Laravel 要使用的一組 32 字元長度的隨機字串 APP_KEY 並存在 .env 內。
 ```sh
 $ php artisan key:generate
 ```
 - 執行 __Artisan__ 指令的 __migrate__ 來執行所有未完成的遷移。
 ```sh
 $ php artisan migrate
+```
+- 執行 __Artisan__ 指令的 __feature:state__ 來找出功能開關的當前狀態。
+```sh
+$ php artisan feature:state {功能開關名稱}
 ```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
 - 你可以經由 `/` 來進行功能開關確認。
