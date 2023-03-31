@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFeaturesTable extends Migration
+return new class extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,13 @@ class CreateFeaturesTable extends Migration
     public function up()
     {
         Schema::create('features', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('title')->nullable();
-            $table->string('feature')->unique();
-            $table->text('description')->nullable();
-            $table->timestamp('active_at')->nullable();
+            $table->id();
+            $table->string('name');
+            $table->string('scope');
+            $table->text('value');
+            $table->timestamps();
+
+            $table->unique(['name', 'scope']);
         });
     }
 
@@ -31,4 +33,4 @@ class CreateFeaturesTable extends Migration
     {
         Schema::dropIfExists('features');
     }
-}
+};
