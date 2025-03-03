@@ -6,7 +6,7 @@ use App\Models\Team;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Lottery;
+// use Illuminate\Support\Lottery;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Pennant\Feature;
 use Laravel\Pennant\Middleware\EnsureFeaturesAreActive;
@@ -40,7 +40,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Feature::define('tasks-management', function (Team $team) {
-            return $team->name == 'Team 1';
+            return $team->id == 1;
         });
 
         Feature::define('team-label', fn (User $user) => Arr::random([
