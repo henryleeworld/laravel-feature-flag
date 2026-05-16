@@ -1,4 +1,4 @@
-# Laravel 12 功能開關
+# Laravel 13 功能開關
 
 引入 laravel 的 pennant 套件來擴增允許控制線上功能開啟或者關閉的方式，通常會採取配置文件的方式來控制，也可以改採取資料庫或 Redis 來控制。
 
@@ -21,16 +21,16 @@ $ php artisan key:generate
 $ php artisan migrate --seed
 ```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
-- 你可以經由 `/` 來進行功能開關確認。
+- 你可以經由 `/tasks` 來進行功能開關確認。
 
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/WeZPD46.png)
+![](https://i.imgur.com/33HmVzd.png)
 > 使用路由來做確認，當你嘗試存取功能開關關閉網頁時，你會收到錯誤 403︰存取遭拒/禁止錯誤訊息
 
-![](https://i.imgur.com/e3AmqzR.png)
+![](https://i.imgur.com/B7nnDNc.png)
 > 因為功能開關關閉而遭到封鎖時，可以在主幹上進行疊代開發，新功能即便未開發完成也不會影響發布，因為它對用戶是關閉的
 
-![](https://i.imgur.com/FsOzMgY.png)
+![](https://i.imgur.com/3dVsukq.png)
 > 允許完成後開啟功能，新功能對用戶進行發布，確認沒問題後續可以把功能開關相關判斷做清除
